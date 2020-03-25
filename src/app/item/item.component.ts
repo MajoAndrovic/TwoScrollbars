@@ -7,7 +7,16 @@ import { Component, Input } from '@angular/core';
 })
 export class ItemComponent {
   @Input() itemName: string;
-  showDetail: boolean;
+  detailOpened: boolean;
 
   constructor() { }
+
+  showDetail(open: boolean) {
+    document.body.classList.remove('item-detail-opened');
+
+    if (open) {
+      document.body.classList.add('item-detail-opened');
+    }
+    this.detailOpened = open;
+  }
 }

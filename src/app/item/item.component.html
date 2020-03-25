@@ -1,14 +1,15 @@
 <div>
-    {{itemName}}
-    <button (click)="showDetail=true">Show detail</button>
+  {{itemName}}
+  <button (click)="showDetail(true)">Show detail</button>
 </div>
 
-<div class="item-detail" *ngIf="showDetail">
-    This is item detail for {{itemName}}
-    <button (click)="showDetail=false">Hide detail</button>
-    <br>    
-    <div *ngFor="let i of [].constructor(30), let x=index">
-        <br>
-        row {{x}}
-    </div>
+<div class="item-detail"
+     *ngIf="detailOpened">
+  This is item detail for {{itemName}}
+  <button (click)="showDetail(false)">Hide detail</button>
+  <br>
+  <div *ngFor="let i of [].constructor(30), let x=index">
+    <br>
+    row {{x}}
+  </div>
 </div>
